@@ -1,0 +1,21 @@
+---
+title: "Outbreak - Flexdashboard test"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+# Outbreak dashboard
+This dashboard aims to advise on the status of the COVID-19 pandemic. 
+https://epirhandbook.com/en/dashboards-with-r-markdown.html
+Test of formula inside text: `r 1 + 1`.
+ 
+# Overview {.sidebar}
+
+This is a sidebar that can be viewed from all pages. 
+
+# Health indicators {data-navmenu="Indicators"}
+# Economic indicators {data-navmenu="Indicators"}
+# Appleville {data-navmenu="Towns"}
+# Orangetown {data-navmenu="Towns"}
+# New Kiwi {data-navmenu="Towns"}
