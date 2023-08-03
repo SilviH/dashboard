@@ -5,16 +5,33 @@ output:
     orientation: columns
     vertical_layout: fill
 ---
-# Outbreak dashboard
+# Outbreak dashboard {.sidebar}
 This dashboard aims to advise on the status of the COVID-19 pandemic. 
+
+Source:
+
 https://epirhandbook.com/en/dashboards-with-r-markdown.html
+
 Test of formula inside text: `r 1 + 1`.
  
-# Overview {.sidebar}
+# Overview
+Second level heading are separated into columns (according to initial settings). Second column is divided into tabs.
 
-This is a sidebar that can be viewed from all pages. 
+## Column 1 {data-width=650}
+### Trasmission chain (select cases)
+## Column 2 {data-width=350 .tabset}
+### Epidemic curve by age
+### Table
 
-# Health indicators {data-navmenu="Indicators"}
+# Health indicators {data-navmenu="Indicators" data-orientation=rows}
+Second level heading are separated into rows (set in the header of the page).
+
+## Row 1 {data-height=650}
+### Trasmission chain (select cases)
+## Row 2 {data-height=350}
+### Epidemic curve by age
+### Table
+
 # Economic indicators {data-navmenu="Indicators"}
 # Appleville {data-navmenu="Towns"}
 # Orangetown {data-navmenu="Towns"}
