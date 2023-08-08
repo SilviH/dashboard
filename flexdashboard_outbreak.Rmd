@@ -11,6 +11,7 @@ output:
 library(here)
 library(tidyverse)
 library (DT)
+library(incidence2)
 ```
 
 ```{r}
@@ -53,7 +54,15 @@ linelist %>%
 ```
 
 ## Column 2 {data-width=500}
+### Interactive plot
+You can pass a standard ggplot or other plot object to ggplotly() from the plotly package to make your plot interactive.
+```{r}
+age_outbreak <- incidence(linelist,  date_index = "date_onset", groups = "age_cat", interval = "weekly")
+plot(age_outbreak, fill = "age_cat", col_pal = muted, title = "") %>% 
+  plotly::ggplotly()
+```
 
+### Transmission chain (select cases)
 # Page 1 {data-navmenu="Other page orientations"}
 Second level heading are separated into columns (according to initial settings). Second column is divided into tabs.
 

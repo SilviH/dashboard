@@ -661,6 +661,13 @@
       ],
       "Hash": "d6db1667059d027da730decdc214b959"
     },
+    "grates": {
+      "Package": "grates",
+      "Version": "1.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "c937fa4cc110a4aabae986a6393dfb15"
+    },
     "gtable": {
       "Package": "gtable",
       "Version": "0.3.3",
@@ -804,6 +811,21 @@
         "uuid"
       ],
       "Hash": "99df65cfef20e525ed38c3d2577f7190"
+    },
+    "incidence2": {
+      "Package": "incidence2",
+      "Version": "2.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "data.table",
+        "grDevices",
+        "grates",
+        "pillar",
+        "utils"
+      ],
+      "Hash": "bd272708a92103589276504d9c3e8855"
     },
     "isoband": {
       "Package": "isoband",
@@ -1052,6 +1074,38 @@
         "utils"
       ],
       "Hash": "01f28d4278f15c76cddbea05899c5d6f"
+    },
+    "plotly": {
+      "Package": "plotly",
+      "Version": "4.10.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R",
+        "RColorBrewer",
+        "base64enc",
+        "crosstalk",
+        "data.table",
+        "digest",
+        "dplyr",
+        "ggplot2",
+        "htmltools",
+        "htmlwidgets",
+        "httr",
+        "jsonlite",
+        "lazyeval",
+        "magrittr",
+        "promises",
+        "purrr",
+        "rlang",
+        "scales",
+        "tibble",
+        "tidyr",
+        "tools",
+        "vctrs",
+        "viridisLite"
+      ],
+      "Hash": "6c00a09ba7d34917d9a3e28b15dd74e3"
     },
     "prettyunits": {
       "Package": "prettyunits",
