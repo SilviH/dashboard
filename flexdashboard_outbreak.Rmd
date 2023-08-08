@@ -5,25 +5,73 @@ output:
     orientation: columns
     vertical_layout: fill
 ---
+
+```{r}
+# Load packages
+library(here)
+library(tidyverse)
+library (DT)
+```
+
+```{r}
+# Import data
+linelist <- read_rds(here("linelist_cleaned.rds"))
+```
+
 # Outbreak dashboard {.sidebar}
-This dashboard aims to advise on the status of the COVID-19 pandemic. 
+This dashboard aims to show possibilities of flexdashboard. 
 
 Source:
 
 https://epirhandbook.com/en/dashboards-with-r-markdown.html
 
-Test of formula inside text: `r 1 + 1`.
- 
+This is a sidebar. It holds text viewable from any page.
+
 # Overview
+## Column 1 {data-width=500}
+### Formulas in text and bullet points
+
+This report is for the Incident Command team of the fictional outbreak of Ebola cases. **As of `r format(max(linelist$date_hospitalisation, na.rm=T), "%d %B")` there have been `r nrow(linelist)` cases reported as hospitalized.**  
+
+* Several previously-unaffected areas to the West are now reporting cases  
+* Internal reviews suggest that better communication is needed between district and provincial level data management teams  
+* Safe and dignified burial teams are reporting difficulties  
+
+
+### Table
+The output will look best and respond to the window size if you use the kable() function from knitr to display your tables. The flextable functions may produce tables that are shortened / cut-off.
+Info on kable: 
+https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html
+
+#### Cases by hospital
+```{r}
+linelist %>%
+  count(hospital) %>%
+  rename("Hospital" = hospital,
+         "Cases" = n) %>% 
+  knitr::kable()
+```
+
+## Column 2 {data-width=500}
+
+# Page 1 {data-navmenu="Other page orientations"}
 Second level heading are separated into columns (according to initial settings). Second column is divided into tabs.
 
 ## Column 1 {data-width=650}
-### Trasmission chain (select cases)
+### Dynamic table
+More info on DT: https://rstudio.github.io/DT/?_ga=2.2810736.1321860763.1619286819-369061888.1601594705
+```{r}
+DT::datatable(linelist, 
+              rownames = FALSE, 
+              options = list(pageLength = 5, scrollX = TRUE), 
+              class = 'white-space: nowrap' )
+```
+
 ## Column 2 {data-width=350 .tabset}
 ### Epidemic curve by age
 ### Table
 
-# Health indicators {data-navmenu="Indicators" data-orientation=rows}
+# Page 2 {data-navmenu="Other page orientations" data-orientation=rows}
 Second level heading are separated into rows (set in the header of the page).
 
 ## Row 1 {data-height=650}
@@ -32,7 +80,3 @@ Second level heading are separated into rows (set in the header of the page).
 ### Epidemic curve by age
 ### Table
 
-# Economic indicators {data-navmenu="Indicators"}
-# Appleville {data-navmenu="Towns"}
-# Orangetown {data-navmenu="Towns"}
-# New Kiwi {data-navmenu="Towns"}
