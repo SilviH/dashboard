@@ -62,11 +62,6 @@ plot(age_outbreak, fill = "age_cat", col_pal = muted, title = "") %>%
   plotly::ggplotly()
 ```
 
-### Transmission chain (select cases)
-# Page 1 {data-navmenu="Other page orientations"}
-Second level heading are separated into columns (according to initial settings). Second column is divided into tabs.
-
-## Column 1 {data-width=650}
 ### Dynamic table
 More info on DT: https://rstudio.github.io/DT/?_ga=2.2810736.1321860763.1619286819-369061888.1601594705
 ```{r}
@@ -75,6 +70,12 @@ DT::datatable(linelist,
               options = list(pageLength = 5, scrollX = TRUE), 
               class = 'white-space: nowrap' )
 ```
+
+# Page 1 {data-navmenu="Other page orientations"}
+Second level heading are separated into columns (according to initial settings). Second column is divided into tabs.
+
+## Column 1 {data-width=650}
+### Dynamic table
 
 ## Column 2 {data-width=350 .tabset}
 ### Epidemic curve by age
